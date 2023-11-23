@@ -1,0 +1,86 @@
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  min-height: 100vh;
+  background: black;
+  margin: 0; /* Remove as margens padrão do corpo da página */
+  padding: 0; /* Remove o preenchimento padrão do corpo da página */
+}
+.container
+{
+  position: relative;
+  width: 100%;
+  height:100vh ;
+  overflow: hidden;
+}
+.bubbles{
+  position: relative;
+  display:flex ;
+}
+.bubbles span{
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background: #FFD700;
+  margin:0 4px;
+  border-radius:48% ;
+  box-shadow: 0 0 0 10px #FFD70044,
+  0 0 50px #FFD700,
+  0 0 100px #FFD700;
+  animation: animate 15s linear infinite;
+  animation-duration: calc(125s/var(--i));
+}
+.bubbles span:nth-child(even)
+{
+  background: #F0E68C;
+  box-shadow: 0 0 0 10px #F0E68C44,
+  0 0 50px #F0E68C,
+  0 0 100px #F0E68C;
+}
+@keyframes animate
+{
+
+  0%
+  {
+       transform: translateY(100vh) scale(0);
+  }
+  100%
+  {
+  transform: translateY(-10vh) scale(1);
+  }
+  }
+  header {
+    background-color:black;
+    padding: 20px; /* Adicione algum preenchimento para melhorar a aparência */
+    color: white; /* Cor do texto no cabeçalho */
+    text-align: center; /* Alinhe o texto ao centro no cabeçalho */
+    border: 7px inset white;
+}
+
+.formulario {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.5); /* Cor de fundo transparente */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.formulario form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario input {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
